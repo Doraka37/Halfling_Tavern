@@ -19,51 +19,36 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { SquircleView } from 'react-native-figma-squircle'
-import SheetResume from './src/Components/SheetResume';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Race from './src/Pages/Race';
+import Home from './src/Pages/Home';
+
+const Stack = createNativeStackNavigator();
 
 const App: () => Node = () => {
 
   return (
     <Provider store={store}>
-      <View style={{
-        backgroundColor: "rgb(99,11,11)",
-        flex: 15
+      <NavigationContainer>
+        <Stack.Navigator
+        screenOptions={{
+          headerShown: false
         }}>
-        <Text
-            style={{marginTop: 10, fontSize: 60, textAlign: "center", fontFamily: "Ace_Records"}}> 
-            Characters
-          </Text>
-      </View>
-      <SafeAreaView style={{
-        flexDirection: "column",
-        alignItems: "center",
-        flex: 85,
-        }}>
-        <SheetResume name={"Doraka"} lvl={6} class={"Bard"} race={"Humain"}/>
-        <SheetResume name={"Islandzi"} lvl={6} class={"Rodeur"} race={"Elf"}/>
-        <TouchableOpacity
-          style={{top:360, left: 140}}
-        >
-          <Image
-            style={styles.tinyLogo}
-            source={require("./Ressources/floating.png")}
+        <Stack.Screen
+            name="Home"
+            component={Home}
+            options={{ title: 'Home' }}
           />
-        </TouchableOpacity>
-      </SafeAreaView>
+          <Stack.Screen
+            name="Race"
+            component={Race}
+            options={{ title: 'Race' }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
     </Provider>
   );
 };
-
-const styles = StyleSheet.create({
-  MidleText: {
-    fontSize: 16,
-    color: "black",
-    fontFamily: "Ace_Records"
-  },
-  tinyLogo: {
-    width: 60,
-    height: 60,
-  },
-});
 
 export default App;

@@ -14,11 +14,11 @@ function SheetResume(props) {
           squircleParams={{
             cornerSmoothing: 0.7,
             cornerRadius: 30,
-            fillColor: 'pink',
+            fillColor: '#330606',
           }}
         >
           <Text
-            style={{marginTop: 10, fontSize: 25, textAlign: "center", fontFamily: "Ace_Records", color: "black",}}> 
+            style={{marginTop: 10, fontSize: 25, textAlign: "center", fontFamily: "Ace_Records", color: "white",}}> 
             {props.name} 
           </Text>
           <View
@@ -66,7 +66,7 @@ function SheetResume(props) {
 const styles = StyleSheet.create({
     MidleText: {
       fontSize: 16,
-      color: "black",
+      color: "white",
       fontFamily: "Ace_Records"
     },
     tinyLogo: {

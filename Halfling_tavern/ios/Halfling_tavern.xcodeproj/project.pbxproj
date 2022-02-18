@@ -14,6 +14,9 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		01C36397FEBA4268A4CF4F71 /* Ace Records.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAC3DFB679F743DFB4A29FA7 /* Ace Records.ttf */; };
 		2A1F25B6C6C1427C82051F34 /* Ace_Records.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45EB2276127C40C6854538A9 /* Ace_Records.ttf */; };
+		0D9E1E0ABF8E42D8B82FCDCC /* DUNGRG__.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 5F711CB7AC914D6DA3338B1D /* DUNGRG__.TTF */; };
+		66A0652A07EA438FAC603AA0 /* dungeon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D366CD7A77044E598443CFA5 /* dungeon.ttf */; };
+		82263EB5FC5643A8B82A839B /* Libertine.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD6EB7B540B415A81506253 /* Libertine.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		EAC3DFB679F743DFB4A29FA7 /* Ace Records.ttf */ = {isa = PBXFileReference; name = "Ace Records.ttf"; path = "../Ressources/Fonts/Ace Records.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		45EB2276127C40C6854538A9 /* Ace_Records.ttf */ = {isa = PBXFileReference; name = "Ace_Records.ttf"; path = "../Ressources/Fonts/Ace_Records.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5F711CB7AC914D6DA3338B1D /* DUNGRG__.TTF */ = {isa = PBXFileReference; name = "DUNGRG__.TTF"; path = "../Ressources/Fonts/DUNGRG__.TTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D366CD7A77044E598443CFA5 /* dungeon.ttf */ = {isa = PBXFileReference; name = "dungeon.ttf"; path = "../Ressources/Fonts/dungeon.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CAD6EB7B540B415A81506253 /* Libertine.ttf */ = {isa = PBXFileReference; name = "Libertine.ttf"; path = "../Ressources/Fonts/Libertine.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,9 @@
 			children = (
 				EAC3DFB679F743DFB4A29FA7 /* Ace Records.ttf */,
 				45EB2276127C40C6854538A9 /* Ace_Records.ttf */,
+				5F711CB7AC914D6DA3338B1D /* DUNGRG__.TTF */,
+				D366CD7A77044E598443CFA5 /* dungeon.ttf */,
+				CAD6EB7B540B415A81506253 /* Libertine.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -231,6 +240,9 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				01C36397FEBA4268A4CF4F71 /* Ace Records.ttf in Resources */,
 				2A1F25B6C6C1427C82051F34 /* Ace_Records.ttf in Resources */,
+				0D9E1E0ABF8E42D8B82FCDCC /* DUNGRG__.TTF in Resources */,
+				66A0652A07EA438FAC603AA0 /* dungeon.ttf in Resources */,
+				82263EB5FC5643A8B82A839B /* Libertine.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
