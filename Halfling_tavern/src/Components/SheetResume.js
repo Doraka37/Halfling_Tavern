@@ -25,7 +25,6 @@ function SheetResume(props) {
           style={{
             flexDirection: "row",
             justifyContent: "space-evenly",
-            alignItems: "center"
             }}>
             <Text
               style={styles.MidleText}> 
@@ -67,7 +66,9 @@ const styles = StyleSheet.create({
     MidleText: {
       fontSize: 16,
       color: "white",
-      fontFamily: "Ace_Records"
+      fontFamily: "Ace_Records",
+      textAlign: "justify",
+      marginRight: 15
     },
     tinyLogo: {
       width: 60,

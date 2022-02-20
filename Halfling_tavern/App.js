@@ -23,6 +23,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Race from './src/Pages/Race';
 import Home from './src/Pages/Home';
+import Class from './src/Pages/Class';
 
 const Stack = createNativeStackNavigator();
 
@@ -44,6 +45,11 @@ const App: () => Node = () => {
             name="Race"
             component={Race}
             options={{ title: 'Race' }}
+          />
+          <Stack.Screen
+            name="Class"
+            component={Class}
+            options={{ title: 'Class' }}
           />
         </Stack.Navigator>
       </NavigationContainer>

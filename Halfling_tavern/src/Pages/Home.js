@@ -33,7 +33,7 @@ export function Home(props) {
           <SheetResume name={"Doraka"} lvl={6} class={"Bard"} race={"Humain"}/>
           <SheetResume name={"Islandzi"} lvl={6} class={"Rodeur"} race={"Elf"}/>
             <TouchableOpacity
-              style={{position: "absolute", top:510, left: 280}}
+              style={{position: "absolute", top:580, left: 300}}
               onPress={() =>
                 props.navigation.navigate('Race')
               }
