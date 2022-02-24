@@ -4,13 +4,10 @@ import {
     View,
     Dimensions
   } from 'react-native';
-import Carousel from 'react-native-snap-carousel';
 
 const SLIDER_WIDTH = Dimensions.get('window').width;
 const ITEM_WIDTH = Math.round(SLIDER_WIDTH);
 const ITEM_HEIGHT = Math.round(ITEM_WIDTH * 3 / 4);
-var array = [{id: 0, race: "Elf"}, {id: 1, race: "Human"}, {id: 2, race: "Dwarf"}, {id: 3, race: "Gnome"}]
-var Image_array = [require("../../Ressources/elves.jpg"), require("../../Ressources/human.jpg"), require("../../Ressources/dwarf.jpg"), require("../../Ressources/gnome.png")]
 
 export function Box({title, desc}) {
     return (
@@ -26,7 +23,7 @@ export function Box({title, desc}) {
             </View>
             <View style={{
                 width: "80%",
-                backgroundColor: "white",
+                backgroundColor: "#090F2E",
                 alignItems: "center", justifyContent: "center",
             }}>
                 <Text style={{fontSize: 25, textAlign: "center", fontFamily: "Libertine", color: "black", marginTop: 20, textAlign: "center"}}>
