@@ -57,7 +57,7 @@ export function ChoiceBox({title, desc}) {
                     {desc}
                 </Text>
                 <DropDownPicker
-                    style={{width: "60%", marginLeft: "20%", marginTop: 10}}
+                    style={{width: "65%", marginLeft: "15%", marginTop: 10}}
                     open={open}
                     value={value}
                     items={items}
