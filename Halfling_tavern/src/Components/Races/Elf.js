@@ -18,9 +18,9 @@ function Elf({id, race, navigation}) {
     function SubRaceComponnent({id, race, navigation}) {
         switch(sub){
             case 0:
-                return <Eladrin race={race} id={id} navigation={navigation}/>
+                return <Eladrin race={"Eladrin"} id={id} navigation={navigation}/>
             case 1:
-                return <Half_Elf race={race} id={id} navigation={navigation}/>
+                return <Half_Elf race={"High Elf"} id={id} navigation={navigation}/>
             default:
                 return <View style={{
                     backgroundColor: "#330606",
@@ -31,15 +31,18 @@ function Elf({id, race, navigation}) {
     }
 
     function SubRaceSelec({race, color, id}) {
+        let backcolor = "#090F2E"
+        if (sub == id) 
+            backcolor = "#405BDE"
         return (
             <View style={{
-              width: 120, height: 50, backgroundColor: "#090F2E", justifyContent: 'center',
-              alignItems: 'center', flexDirection: "row"
+              width: 120, height: 50, backgroundColor: backcolor, justifyContent: 'center',
+              alignItems: 'center', flexDirection: "row" 
             }}>
                 <TouchableOpacity
                     onPress={() => setSub(id)}
                 >
-                    <Text style={{fontSize: 40, fontFamily: "dungeon", textAlign: "center"}}>
+                    <Text style={{fontSize: 40, fontFamily: "dungeon", textAlign: "center", color: "white"}}>
                         {race}
                     </Text>
                 </TouchableOpacity>
@@ -59,18 +62,18 @@ function Elf({id, race, navigation}) {
                 }}
                 nestedScrollEnabled={true}
                 contentContainerStyle={{alignItems: "center", justifyContent: "center",}}>
-                <Text style={{fontSize: 60, textAlign: "center", fontFamily: "dungeon", marginTop: 20}}>
+                <Text style={{fontSize: 60, textAlign: "center", fontFamily: "dungeon", marginTop: 20, color: "white"}}>
                     {race}
                 </Text>
                 <View style={{
                     width: "100%",
                     alignItems: "center", justifyContent: "center", marginBottom: 20
                 }}>
-                    <Text style={{fontSize: 30, textAlign: "center", fontFamily: "dungeon", marginTop: 20, textAlign: "center"}}>
+                    <Text style={{fontSize: 30, textAlign: "center", fontFamily: "dungeon", marginTop: 20, textAlign: "center", color: "white"}}>
                     Elves are a magical people of otherworldly grace, living in the world but not entirely part of it.
                     </Text>
                 </View>
-                <Text style={{fontSize: 50, textAlign: "center", fontFamily: "dungeon", marginTop: 20}}>
+                <Text style={{fontSize: 50, textAlign: "center", fontFamily: "dungeon", marginTop: 20, color: "white"}}>
                     This class comport several subraces
                 </Text>
                 <SafeAreaView style={{flex: 1000, flexDirection: "row"}}>
@@ -80,7 +83,6 @@ function Elf({id, race, navigation}) {
                 </SafeAreaView>
                 <SubRaceComponnent race={race} id={sub} navigation={navigation}/>
             </ScrollView>
-            <RaceBottom race={race} id={id} navigation={navigation}/>
         </SafeAreaView>
     );
 }

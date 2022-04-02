@@ -1,5 +1,5 @@
 const initialState = {
-    pos: 0,
+    race: "",
   };
   
   function BaseReducer(state = initialState, action) {
@@ -12,10 +12,10 @@ const initialState = {
         };
   
       return nextState;
-      case 'ADD_POS':
+      case 'SET_RACE':
         nextState = {
           ...state,
-        pos: action.value
+          race: action.value
         };
         default:
             return state;

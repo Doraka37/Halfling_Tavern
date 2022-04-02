@@ -28,14 +28,14 @@ function Half_Elf({id, race, navigation}) {
                     style={{width: '100%', resizeMode: "contain"}}
                     source={Image_array[id]}
                 />
-                <Text style={{fontSize: 60, textAlign: "center", fontFamily: "dungeon", marginTop: 20}}>
+                <Text style={{fontSize: 60, textAlign: "center", fontFamily: "dungeon", marginTop: 20, color: "white"}}>
                     {race}
                 </Text>
                 <View style={{
                     width: "100%",
                     alignItems: "center", justifyContent: "center", marginBottom: 20
                 }}>
-                    <Text style={{fontSize: 30, textAlign: "center", fontFamily: "dungeon", marginTop: 20, textAlign: "center"}}>
+                    <Text style={{fontSize: 30, textAlign: "center", fontFamily: "dungeon", marginTop: 20, textAlign: "center", color: "white"}}>
                         Half-elves combine what some say are the best qualities of their elf and human parents.
                     </Text>
                 </View>
