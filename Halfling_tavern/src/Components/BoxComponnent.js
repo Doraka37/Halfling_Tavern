@@ -26,7 +26,7 @@ export function Box({title, desc}) {
                 backgroundColor: "#090F2E",
                 alignItems: "center", justifyContent: "center",
             }}>
-                <Text style={{fontSize: 25, textAlign: "center", fontFamily: "Libertine", color: "black", marginTop: 20, textAlign: "center"}}>
+                <Text style={{fontSize: 25, textAlign: "center", fontFamily: "Libertine", color: "white", marginTop: 20, textAlign: "center"}}>
                     {desc}
                 </Text>
             </View>

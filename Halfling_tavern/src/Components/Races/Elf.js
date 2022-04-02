@@ -4,21 +4,12 @@ import {
     View,
     SafeAreaView,
     ScrollView,
-    Image,
-    Dimensions,
-    FlatList,
     TouchableOpacity
   } from 'react-native';
 
 import RaceBottom from '../RaceBottom';
 import Eladrin from './SubRaces/Eladrin';
 import Half_Elf from './Half_Elf';
-const SLIDER_WIDTH = Dimensions.get('window').width;
-const ITEM_WIDTH = Math.round(SLIDER_WIDTH);
-const ITEM_HEIGHT = Math.round(ITEM_WIDTH * 3 / 4);
-
-var Image_array = [require("../../../Ressources/Half-Elf.png"), require("../../../Ressources/Half-Elf.png"), require("../../../Ressources/dwarf.jpg"), require("../../../Ressources/gnome.png")]
-var array = [{id: 0, race: "Half-Elf"}, {id: 1, race: "Elf"}]
 
 function Elf({id, race, navigation}) {
 

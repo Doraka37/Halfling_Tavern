@@ -11,63 +11,68 @@ import {
   } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import Box from '../Components/BoxComponnent';
+import Barbarian from '../Components/Classes/Barbarian';
 
 const SLIDER_WIDTH = Dimensions.get('window').width;
 const ITEM_WIDTH = Math.round(SLIDER_WIDTH);
 const ITEM_HEIGHT = Math.round(ITEM_WIDTH * 3 / 4);
+import list from "../../Ressources/class_array.json"
+
 var array = [{id: 0, clas: "Guerrier"}, {id: 1, clas: "Sorcier"}, {id: 2, clas: "Barde"}, {id: 3, clas: "Rodeur"}]
-var Image_array = [require("../../Ressources/guerrier.jpg"), require("../../Ressources/sorcier.jpg"), require("../../Ressources/dwarf.jpg"), require("../../Ressources/gnome.png")]
 
-
-export function ClassComponnent({id, clas}) {
+export function TextComp({title, desc}) {
     return (
         <View style={{
-            flex: 100
-            }}>
-            <ScrollView style={{
-                backgroundColor: "#032033",
-                flex: 80
-                }}>
-                <Image
-                    style={{width: '100%', resizeMode: "stretch"}}
-                    source={Image_array[id]}
-                />
-                <Text style={{fontSize: 60, textAlign: "center", fontFamily: "dungeon", marginTop: 20}}>
-                    {clas}
-                </Text>
-                <Box title={"Rage"} desc={"You have advantage on Strength checks and Strength saving throws."}/>
-                <Box title={"Unarmored Defense"} desc={"While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit."}/>
-            </ScrollView>
-            <View style={{
-                flex: 0.1
-            }}>
-                <TouchableOpacity>
-                <View style={{
-                    backgroundColor: "#330606",
-                }}>
-                    <Text style={{fontSize: 60, textAlign: "center", fontFamily: "dungeon", marginTop: 10}}>
-                        Choisir cette classe
-                    </Text>
-                </View>
-                </TouchableOpacity>
-            </View>
+            width: "100%",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            flexDirection: "row",
+            marginTop: -15
+        }}>
+            <Text style={{fontSize: 40, textAlign: "center", fontFamily: "dungeon", textAlign: "center"}}>
+                {title}
+            </Text>
+            <Text style={{fontSize: 30, textAlign: "center", fontFamily: "dungeon", textAlign: "center", marginTop: 5, padding: 10}}>
+                {desc}
+            </Text>
         </View>
     );
 }
 
+function ClassComponnent({clas, race, navigation}) {
+    switch(clas){
+        case "Barbarian":
+            return <Barbarian race={race} clas={clas} navigation={navigation}/>
+        case "Sorcier":
+            return <Barbarian race={race} clas={clas} navigation={navigation}/>
+        default:
+            return <View style={{
+                backgroundColor: "#330606",
+                width: "100%",
+            }}>
+                <Text style={{fontSize: 60, fontFamily: "dungeon", marginTop: -10, textAlign: "center"}}>
+                    Choisir cette race3
+                </Text>
+            </View>
+    }
+}
+
 export function Class(props) {
+    var race = props.route.params.race;
+    var raceId = props.route.params.raceId;
+
     return (
       <View style={{
         flex: 100
     }}>
         <Carousel
             style={{flex: 100}}
-            data={array}
+            data={list[0]}
             keyExtractor={(item) => item.id}
             sliderWidth={SLIDER_WIDTH}
             itemWidth={ITEM_WIDTH}
             renderItem={({ item }) => (
-                <ClassComponnent clas={item.clas} id={item.id}/>
+                <ClassComponnent clas={item} race={race} race={props.navigation}/>
             )}
         />
       </View>

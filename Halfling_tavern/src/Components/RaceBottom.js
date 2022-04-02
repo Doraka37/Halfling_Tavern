@@ -21,7 +21,10 @@ function RaceBottom({id, race, navigation}) {
                     width: "80%",
                 }}
                 onPress={() =>
-                    navigation.navigate('Class')
+                    navigation.navigate('Class', {
+                        race: race,
+                        raceId: id
+                      })
             }>
                 <View style={{
                     backgroundColor: "#330606",

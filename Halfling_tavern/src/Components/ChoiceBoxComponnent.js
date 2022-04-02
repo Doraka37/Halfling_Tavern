@@ -77,7 +77,8 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontFamily: "Libertine",
         color: "black", marginTop: 20,
-        textAlign: "center"
+        textAlign: "center",
+        color: "white"
     },
     Check: {
         fontSize: 25,
