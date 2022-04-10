@@ -29,10 +29,10 @@ export function TextComp({title, desc}) {
             flexDirection: "row",
             marginTop: -15
         }}>
-            <Text style={{fontSize: 40, textAlign: "center", fontFamily: "dungeon", textAlign: "center"}}>
+            <Text style={{fontSize: 40, textAlign: "center", fontFamily: "dungeon", textAlign: "center", color: "white"}}>
                 {title}
             </Text>
-            <Text style={{fontSize: 30, textAlign: "center", fontFamily: "dungeon", textAlign: "center", marginTop: 5, padding: 10}}>
+            <Text style={{fontSize: 30, textAlign: "center", fontFamily: "dungeon", textAlign: "center", marginTop: 5, padding: 10, color: "white"}}>
                 {desc}
             </Text>
         </View>
@@ -72,7 +72,7 @@ export function Class(props) {
             sliderWidth={SLIDER_WIDTH}
             itemWidth={ITEM_WIDTH}
             renderItem={({ item }) => (
-                <ClassComponnent clas={item} race={race} race={props.navigation}/>
+                <ClassComponnent clas={item} race={race} navigation={props.navigation}/>
             )}
         />
       </View>

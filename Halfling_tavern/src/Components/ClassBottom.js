@@ -7,9 +7,7 @@ import {
     TouchableOpacity
   } from 'react-native';
 
-var Image_array = [require("../../Ressources/Half-Elf.png"), require("../../Ressources/human.jpg"), require("../../Ressources/dwarf.jpg"), require("../../Ressources/gnome.png")]
-
-function RaceBottom({id, race, navigation}) {
+function ClassBottom({clas, navigation}) {
     const store = Store.getState();
 
     return (
@@ -24,22 +22,24 @@ function RaceBottom({id, race, navigation}) {
                     width: "80%",
                 }}
                 onPress={() => {
-                    console.log("setting race: ", race)
+                    console.log("setting class: ", clas)
                     let action = {
-                        type: 'SET_RACE',
-                        value: race
+                        type: 'SET_CLASS',
+                        value: clas
                     };
                     Store.dispatch(action);
-                    navigation.navigate('Class', {
+                    /*navigation.navigate('Class', {
                         race: race,
-                })}
+                        raceId: id
+                    })*/
+                }
             }>
                 <View style={{
                     backgroundColor: "#330606",
                     width: "100%",
                 }}>
-                    <Text style={{fontSize: 60, fontFamily: "dungeon", marginTop: -10, textAlign: "center", color: "white"}}>
-                        Choisir cette race
+                    <Text style={{fontSize: 55, fontFamily: "dungeon", marginTop: -10, textAlign: "center", color: "white"}}>
+                        Choisir cette classe
                     </Text>
                 </View>
             </TouchableOpacity>
@@ -47,4 +47,4 @@ function RaceBottom({id, race, navigation}) {
     );
 }
 
-export default RaceBottom;
+export default ClassBottom;

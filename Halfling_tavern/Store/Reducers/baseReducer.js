@@ -1,5 +1,6 @@
 const initialState = {
     race: "",
+    clas: "",
   };
   
   function BaseReducer(state = initialState, action) {
@@ -17,9 +18,14 @@ const initialState = {
           ...state,
           race: action.value
         };
-        default:
-            return state;
-    }
+      case 'SET_CLASS':
+        nextState = {
+          ...state,
+          clas: action.value
+        };
+      default:
+          return state;
+  }
   }
   
   export default BaseReducer;

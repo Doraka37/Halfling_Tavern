@@ -10,13 +10,17 @@ import {
 import Box from '../BoxComponnent';
 import ChoiceBox from '../ChoiceBoxComponnent';
 import { TextComp } from '../../Pages/Class';
+import ClassBottom from '../ClassBottom';
+import infos from "../../../Ressources/jsons/barbarian.json"
 
 var Image_array = [require("../../../Ressources/Half-Elf.png"), require("../../../Ressources/human.jpg"), require("../../../Ressources/dwarf.jpg"), require("../../../Ressources/gnome.png")]
 
 function Barbarian({clas, race, navigation}) {
     return (
         <View style={{
-            flex: 100
+            flex: 100,
+            backgroundColor: "#032033",
+            alignItems: "center", justifyContent: "center",
             }}>
             <ScrollView style={{
                 backgroundColor: "#032033",
@@ -26,14 +30,14 @@ function Barbarian({clas, race, navigation}) {
                     style={{width: '100%', resizeMode: "stretch"}}
                     source={require("../../../Ressources/guerrier.jpg")}
                 />
-                <Text style={{fontSize: 60, textAlign: "center", fontFamily: "dungeon", marginTop: 20}}>
+                <Text style={{fontSize: 60, textAlign: "center", fontFamily: "dungeon", marginTop: 20, color: "white"}}>
                     {clas}
                 </Text>
                 <View style={{
                     width: "100%",
                     alignItems: "center", justifyContent: "center", marginBottom: 20
                 }}>
-                    <Text style={{fontSize: 30, textAlign: "center", fontFamily: "dungeon", marginTop: 20, textAlign: "center"}}>
+                    <Text style={{fontSize: 30, textAlign: "center", fontFamily: "dungeon", marginTop: 20, textAlign: "center", color: "white"}}>
                         A fierce warrior of primitive background who can enter a battle rage
                     </Text>
                 </View>
@@ -41,27 +45,16 @@ function Barbarian({clas, race, navigation}) {
                 <TextComp title={"Primary Ability:"} desc={"Strength"}/>
                 <TextComp title={"Saves:"} desc={"Strength & Constitution"}/>
                 { race == "Half-Elf"
-                    ? <Text style={{fontSize: 30, textAlign: "center", fontFamily: "dungeon", marginTop: 10, marginBottom: 10}}>
+                    ? <Text style={{fontSize: 30, textAlign: "center", fontFamily: "dungeon", marginTop: 10, marginBottom: 10, color: "white"}}>
                         This class works well with the the race you have chosen
                     </Text>
                     : null
                 }
-                <Box title={"Rage"} desc={"You have advantage on Strength checks and Strength saving throws."}/>
-                <Box title={"Unarmored Defense"} desc={"While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit."}/>
+                <Box title={infos.rage.title} desc={infos.rage.description}/>
+                <Box title={infos.UnarmoredDefense.title} desc={infos.UnarmoredDefense.description}/>
+                <Box title={infos.RecklessAttack.title} desc={infos.RecklessAttack.description}/>
             </ScrollView>
-            <View style={{
-                flex: 0.1
-            }}>
-                <TouchableOpacity>
-                <View style={{
-                    backgroundColor: "#330606",
-                }}>
-                    <Text style={{fontSize: 60, textAlign: "center", fontFamily: "dungeon", marginTop: 10}}>
-                        Choisir cette classe
-                    </Text>
-                </View>
-                </TouchableOpacity>
-            </View>
+            <ClassBottom clas={clas} navigation={navigation}/>
         </View>
     );
 }
