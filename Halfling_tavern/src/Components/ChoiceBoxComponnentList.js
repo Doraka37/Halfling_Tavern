@@ -7,13 +7,13 @@ import {
   } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 
-export function ChoiceBox({title, desc, choices, nb}) {
+export function ChoiceBoxList({title, desc, choices, nb}) {
     const [refresh, setRefresh] = useState(false);
 
     function Check({item}) {
     
         return (
-            <View style={{flexDirection: "row", marginTop: 10, alignItems: "flex-start"}}>
+            <View style={{flexDirection: "row", marginTop: 10, alignItems: "center"}}>
                 <CheckBox
                     value={item.checked}
                     onValueChange={(newValue) => {
@@ -27,6 +27,24 @@ export function ChoiceBox({title, desc, choices, nb}) {
                     {item.label} 
                 </Text>
           </View>
+        );
+    }
+
+    function renderItem({item}) {
+        return (
+            <View style={{
+                width: "100%",
+                alignItems: "center",
+                justifyContent: "flex-start",
+                marginTop: 5,
+            }}>
+                <Text style={{fontSize: 40, textAlign: "center", fontFamily: "dungeon", textAlign: "center", color: "#696969"}}>
+                    {item.title} : 
+                </Text>
+                <Text style={{fontSize: 30, textAlign: "center", fontFamily: "dungeon", textAlign: "center", marginTop: 5, marginLeft: 2, color: "white"}}>
+                    {item.desc}
+                </Text>
+            </View>
         );
     }
 
@@ -46,9 +64,11 @@ export function ChoiceBox({title, desc, choices, nb}) {
                 backgroundColor: "#090F2E",
                 alignItems: "center", justifyContent: "center",
             }}>
-                <Text style={styles.Desc}>
-                    {desc}
-                </Text>
+                <FlatList
+                    data={desc}
+                    renderItem={renderItem}
+                    keyExtractor={item => item.title}
+                />
                 <FlatList
                     data={choices}
                     renderItem={Check}
@@ -86,4 +106,4 @@ const styles = StyleSheet.create({
 
 //const mapStateToProps = (state) => state;
 //export default connect(mapStateToProps)(ButtonIcon);
-export default ChoiceBox;
+export default ChoiceBoxList;

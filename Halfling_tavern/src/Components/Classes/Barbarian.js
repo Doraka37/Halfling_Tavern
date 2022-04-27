@@ -8,8 +8,9 @@ import {
   } from 'react-native';
 
 import Box from '../BoxComponnent';
-import ChoiceBox from '../ChoiceBoxComponnent';
-import { TextComp } from '../../Pages/Class';
+import BoxList from '../BoxComponnentList';
+import ChoiceBoxList from '../ChoiceBoxComponnentList';
+import {TextComp} from '../../Pages/Class'
 import ClassBottom from '../ClassBottom';
 import infos from "../../../Ressources/jsons/barbarian.json"
 
@@ -53,6 +54,8 @@ function Barbarian({clas, race, navigation}) {
                 <Box title={infos.rage.title} desc={infos.rage.description}/>
                 <Box title={infos.UnarmoredDefense.title} desc={infos.UnarmoredDefense.description}/>
                 <Box title={infos.RecklessAttack.title} desc={infos.RecklessAttack.description}/>
+                <BoxList title={infos.HitPoints.title} desc={infos.HitPoints.description}/>
+                <ChoiceBoxList title={infos.Proficiencies.title} desc={infos.Proficiencies.description} nb={2} choices={[{checked: true, label: 'French', value: 'French'}, {checked: false, label: 'D', value: 'D'},  {checked: false, label: 'D2', value: 'D2'},  {checked: false, label: 'D3', value: 'D3'}]}/>
             </ScrollView>
             <ClassBottom clas={clas} navigation={navigation}/>
         </View>

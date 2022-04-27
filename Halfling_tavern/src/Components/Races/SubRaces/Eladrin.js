@@ -43,7 +43,8 @@ function Eladrin({id, race, navigation}) {
                 <Box title={"Darkvision"} desc={"Thanks to your elf blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray."}/>
                 <Box title={"Fey Ancestry"} desc={"You have advantage on saving throws against being charmed, and magic can’t put you to sleep."}/>
                 <Box title={"Skill Versatility"} desc={"You gain proficiency in two skills of your choice."}/>
-                <ChoiceBox title={"Languages"} desc={"You can speak, read, and write Common, Elvish, and one extra language of your choice."}/>
+                {//<ChoiceBox title={"Languages"} desc={"You can speak, read, and write Common, Elvish, and one extra language of your choice."}/>
+                }
                 <RaceBottom race={race} id={id} navigation={navigation}/>
             </ScrollView>
         </View>

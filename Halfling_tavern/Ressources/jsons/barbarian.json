@@ -16,5 +16,18 @@
         "description":"Starting at 2nd level, you can throw aside all concern for defense to attack with fierce desperation. When you make your first attack on your turn, you can decide to attack recklessly. Doing so gives you advantage on melee weapon attack rolls using Strength during this turn, but attack rolls against you have advantage until your next turn.",
         "choice":false,
         "level": 2
-     }
+     },
+     "Proficiencies":{
+      "title":"Proficiencies",
+      "description":[{"title": "Armor", "desc": "Light armor, medium armor, shields"}, {"title": "Weapons", "desc": "Simple weapons, martial weapons"}, {"title": "Tools", "desc": "None"}, {"title": "Saving Throws", "desc": "Strength, Constitution"}, {"title": "Skills", "desc": "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"}],
+      "choice": 2,
+      "choices": ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"],
+      "level": 1
+   },
+   "HitPoints":{
+      "title":"Hit Points",
+      "description":[{"title": "Hit Dice", "desc": "1d12 per barbarian level"}, {"title": "Hit Points at 1st Level", "desc": "12 + your Constitution modifier"}, {"title": "Hit Points at Higher Levels", "desc": "1d12 (or 7) + your Constitution modifier per barbarian level after 1st"}],
+      "choice":false,
+      "level": 2
+   }
  }
