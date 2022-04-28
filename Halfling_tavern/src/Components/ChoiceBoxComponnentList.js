@@ -3,12 +3,16 @@ import {
     Text,
     View,
     StyleSheet,
-    FlatList
+    FlatList,
+    TouchableOpacity
   } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
+import Store from '../../Store/configureStore';
 
 export function ChoiceBoxList({title, desc, choices, nb}) {
     const [refresh, setRefresh] = useState(false);
+    const [extend, setExtend] = useState(true);
+    const store = Store.getState();
 
     function Check({item}) {
     
@@ -18,7 +22,14 @@ export function ChoiceBoxList({title, desc, choices, nb}) {
                     value={item.checked}
                     onValueChange={(newValue) => {
                         setRefresh(!refresh)
+                        console.log("item: ", item.label);
                         item.checked = newValue
+                        let action = {
+                            type: 'SET_SKILLS',
+                            value: item.label
+                        };
+                        Store.dispatch(action);
+                        console.log("store: ", store);
                     }}
                     style={{alignSelf: "flex-start"}}
                     tintColors={{true: "green", false: "orange"}}
@@ -50,16 +61,21 @@ export function ChoiceBoxList({title, desc, choices, nb}) {
 
     return (
         <View style={{width: "100%", alignItems: "center", justifyContent: "center", marginTop: 10, marginBottom: 10}}>
-            <View style={{
-                width: "80%",
-                backgroundColor: "grey",
-                alignItems: "center", justifyContent: "center",
-            }}>
-                <Text style={styles.Title}>
-                    {title}
-                </Text>
-            </View>
-            <View style={{
+            <TouchableOpacity style={{
+                    width: "80%",
+                    backgroundColor: "grey",
+                    alignItems: "center", justifyContent: "center",
+                }}
+                onPress={() => {
+                    setExtend(!extend)
+                }}>
+                <View>
+                        <Text style={{fontSize: 40, textAlign: "center", fontFamily: "dungeon", marginTop: 20, textAlign: "center"}}>
+                            {title}
+                        </Text>
+                </View>
+            </TouchableOpacity>
+            {extend == true && (<View style={{
                 width: "80%",
                 backgroundColor: "#090F2E",
                 alignItems: "center", justifyContent: "center",
@@ -74,7 +90,7 @@ export function ChoiceBoxList({title, desc, choices, nb}) {
                     renderItem={Check}
                     keyExtractor={item => item.label}
                 />
-            </View>
+            </View>)}
         </View>
     );
 }

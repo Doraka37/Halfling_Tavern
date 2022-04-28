@@ -1,7 +1,7 @@
 import { createStore, combineReducers } from 'redux';
 
 import { persistStore, persistReducer } from 'redux-persist'
-import { AsyncStorage } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import BaseReducer from './Reducers/baseReducer';
 

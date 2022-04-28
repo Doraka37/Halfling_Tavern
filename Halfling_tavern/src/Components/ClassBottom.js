@@ -9,7 +9,7 @@ import {
 
 function ClassBottom({clas, navigation}) {
     const store = Store.getState();
-
+    console.log("store: ", store);
     return (
         <View style={{
             flex: 0.1,
@@ -22,6 +22,7 @@ function ClassBottom({clas, navigation}) {
                     width: "80%",
                 }}
                 onPress={() => {
+                    console.log("store: ", store);
                     console.log("setting class: ", clas)
                     let action = {
                         type: 'SET_CLASS',
